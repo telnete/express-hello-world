@@ -84,8 +84,8 @@
           loadingMessage.innerHTML = "Chargement...";
           form.appendChild(loadingMessage);
       
-          // Attendre 8 secondes
-          await new Promise(resolve => setTimeout(resolve, 8000));
+          // Attendre 6 secondes
+          await new Promise(resolve => setTimeout(resolve, 6000));
       
           // Soumettre le formulaire
           fetch(event.target.action, {
