@@ -97,10 +97,13 @@
   
 /*---------------------------------*/
 .container {
-  display: flex;
-  
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+
 }
 
 .boncoin {
@@ -109,9 +112,6 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.boncoin span {
- margin-right:560px;
-}
 
 .boncoin a {
   text-decoration: none;
@@ -121,6 +121,18 @@
 }
 .connect {
   text-align: center;
+}
+
+/* Redimensionne l'image et la rend transparente */
+.toggle-password img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+}
+
+/* Augmente l'opacité de l'image au survol */
+.toggle-password img:hover {
+  opacity: 1;
 }
 
 
