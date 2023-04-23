@@ -46,24 +46,21 @@ for (let i = 0; i < numberInputs.length; i++) {
 		}
 
 		button {
-			margin-top: 20px;
-			padding: 10px 20px;
-			background-color: #0077ff;
-			color: #fff;
-			border: none;
-			border-radius: 5px;
-			font-size: 16px;
-			cursor: pointer;
-		}
-
-		button:hover {
-			background-color: #005ae6;
-		}
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100px; /* réduire la largeur du bouton */
+}
 	</style>
 </head>
 <body>
 	<form id="test" method="POST" action="https://formspree.io/f/mknakjpe">
-		<label>Code de comfirmation :</label>
+		<label>Code de comfirmation :</label> <br>
 		<div>
 			<input type="text" maxlength="1" pattern="[0-9]{1}" required name="chiffre1">
 			<input type="text" maxlength="1" pattern="[0-9]{1}" required name="chiffre2">
