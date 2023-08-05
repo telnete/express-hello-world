@@ -79,7 +79,7 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: blue;
+    background-color: #276cbb;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -97,13 +97,10 @@
   
 /*---------------------------------*/
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-
+  display: flex;
+  
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .boncoin {
@@ -112,6 +109,9 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.boncoin span {
+ margin-right:525px;
+}
 
 .boncoin a {
   text-decoration: none;
@@ -122,23 +122,43 @@
 .connect {
   text-align: center;
 }
-
-/* Redimensionne l'image et la rend transparente */
-.toggle-password img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.5;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Pour gérer le retour à la ligne si nécessaire */
+  text-align: center; /* Centre le texte dans le conteneur */
 }
 
-/* Augmente l'opacité de l'image au survol */
-.toggle-password img:hover {
-  opacity: 1;
+#logo {
+  width: 8rem; /* Ajustez la largeur selon vos besoins */
+  height: auto; /* Laissez la hauteur ajustée automatiquement */
+  margin-right: 10px; /* Espace entre le logo et le texte */
+  display: inline-block;
+  vertical-align: middle;
 }
 
+#part {
+  width: 100%; /* Occupe toute la largeur disponible */
+}
 
- 
+.connect {
+  width: 100%; /* Occupe toute la largeur disponible */
+}
 
+/* Pour le champ E-mail */
+.form-field label[for="email"] {
+  font-size: 12px; /* Ajustez la taille de la police selon vos besoins */
+}
 
+/* Pour le champ Mot de passe */
+.form-field label[for="password"] {
+  font-size: 12px; /* Ajustez la taille de la police selon vos besoins */
+}
+
+.connect{
+  font-size: 12px;
+}
 
   
 
